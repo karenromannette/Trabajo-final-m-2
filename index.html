@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>AutoLimpio</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="assets/img/servicio-de-auto.png" />
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="karen"/>
+    <meta name="description" content="Lavado de autos AutoLimpio" />
+    <meta name="keywords" content="auto, limpieza, limpieza de autos, lavado de motor, lavado de autos" />
+    <link href="assets/estilos/estilos.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   
+
+    <style>
+         .mensajeError {
+             color: red;
+             font-size: 12px;
+           }
+           .inputError{
+             border-color: red;
+            }
+    </style>
+        
+</head>
+<body>
+    <div class="container-fluid">
+        <header> 
+            <h1>Auto Limpio</h1>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Navbar</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      <a class="nav-link" href="#">Features</a>
+                      <a class="nav-link" href="#">Pricing</a>
+                      <a class="nav-link disabled">Disabled</a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        
+        </header>
+
+       <section class="container-fluid ">
+        <div class="row">
+            <div class="form-group">
+                <div class="container-fluid">
+                    <form action="index.html" method="get"  id="formulario">
+
+                        <div class="row">
+                            <div class=" col-12 col-md-6">
+                                    <div class="form-goup">
+                                        <h2>Datos Cliente</h2>
+                                        <div class="mb-3">
+                                            <label for="Nombre" class="form-label">Nombre</label>
+                                            <input type="text" class="form-control" id="nombre" placeholder="Ej: Mario">
+                                            <div id="errorNombre" class="mensajeError"></div>
+                                        </div>
+                                        <br>
+                                        <div class="mb-3">
+                                            <label for="apellido" class="form-label">Apellido</label>
+                                            <input type="text" class="form-control" id="apellido" placeholder="Ej: Martinez">
+                                            <div id="errorApellido" class="mensajeError"></div>
+                                        </div>
+                                        <br>
+                                        <div class="row g-3">
+                                              <label for="rut" class="form-label">Rut con digito verificador</label>
+                                            <div class="col-sm-3">
+                                              <input type="number" class="form-control" placeholder=" Sin puntos 12345678" aria-label="rut" id="rut">
+                                              <div id="errorRut" class="mensajeError"></div>
+                                            </div>
+                                            <p class="col-1">-</p>
+                                            <div class="col-1">
+                                              <input type="text" class="form-control"  aria-label="rut" id="digito">
+                                              <div id="errorDigito" class="mensajeError "></div>
+                                            </div>
+                                        </div> 
+                                        <br> 
+                                          <div class="mb-3">
+                                            <label for="direccion" class="form-label">Dirección</label>
+                                            <input type="text" class="form-control" id="direccion" placeholder="Ej: Las acacias 123">
+                                            <div id="errorDireccion" class="mensajeError"></div>
+                                          </div>
+                                          <label for="comuna" class="form-label">Comuna</label>
+                                          <select class="form-select" aria-label="Default select example">
+                                            <option selected>Seleccione una comuna</option>
+                                            <option value="1">Temuco</option>
+                                            <option value="2">Villarrica</option>
+                                            <option value="3">Vilcún</option>
+                                            <option value="4">Lautaro</option>
+                                            <option value="5">Angol</option>
+                                          </select>
+                                          <br>
+                                         
+                                        
+                                           
+                                    </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <h2>Datos vehiculo</h2>
+
+                                            
+                                              <label for="comuna" class="form-label">Tipo de vehiculo</label>
+                                              <select class="form-select" aria-label="Default select example">
+                                                <option selected>Seleccione el vehiculo</option>
+                                                <option value="1">Automóvil</option>
+                                                <option value="2">Furgón</option>
+                                                <option value="3">Camión</option>
+                                                <option value="4">Camioneta </option>
+                                                <option value="5">Moto</option>
+                                              </select>
+                                              <br>
+
+
+                                            
+                                              </div>
+                                              <div class="mb-3">
+                                                <label for="marca" class="form-label">Marca</label>
+                                                <input type="text" class="form-control" id="marca" >
+                                                <div id="errorMarca" class="mensajeError"></div>
+                                            </div>
+                                            <br>
+                                            <div class="mb-3">
+                                                <label for="modelo" class="form-label">Modelo</label>
+                                                <input type="text" class="form-control" id="modelo" >
+                                            </div>
+                                            <br>
+                                            <div class="mb-3">
+                                                <label for="año" class="form-label">Año</label>
+                                                <input type="number" class="form-control" id="año" >
+                                                <div id="errorAño" class="mensajeError"></div>
+                                            </div>
+                                            <br>
+                                            <label for="revision" class="form-label">Revisión Técnica</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="revision" id="revision" checked>
+                                                <label class="form-check-label" for="revision">
+                                                  Si
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="revision" id="revision" >
+                                                <label class="form-check-label" for="revision">
+                                                  No
+                                                </label>
+                                            </div>
+                                              <br>
+                                             
+                                           
+                                            
+
+
+                                        </div>
+
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <h2>Servicios</h2>
+                                    <label for="encargado" class="form-label">Encargado</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Seleccione un encargado</option>
+                                        <option value="1">Manuel Rojas</option>
+                                        <option value="2">Pedro Sanchez</option>
+                                        <option value="3">Juan Carlos Ruiz</option>
+                                    </select>
+                                    <br>
+                                    <label for="servicios" class="form-label">Servicios</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="lavadoExterior" checked>
+                                        <label class="form-check-label" for="lavadoExterior">
+                                            Lavado exterior $7000.
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="lavadoMotor" >
+                                        <label class="form-check-label" for="lavadoMotor">
+                                            Lavado de motor $5000.
+                                        </label>
+                                      </div>
+                                      <br>
+                                      <div class="mb-3">
+                                        <label for="fecha" class="form-label">Resevar fecha</label>
+                                        <input type="date" class="form-control" id="fecha" >
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button class="btn btn-secondary" type="submit">Registrar</button>
+                                
+                              </div>
+
+                          
+
+                        </div>
+                         
+                    </form>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+       </section>
+       <footer>
+
+        <p>sdhaksdhkasjh</p>
+
+       </footer>
+       <script>
+           $(function(){
+               $('#formulario').submit(function(evento){
+                   const nombre = $('#nombre');
+                   const apellido = $('#apellido');
+                   const rut = $('#rut');
+                   const digito = $('#digito');
+                   const direccion = $('#direccion');
+                   const marca = $('#marca');
+                   const año = $('#año');
+
+                   const errorNombre = $('#errorNombre');
+                   const errorApellido = $('#errorApellido');
+                   const errorRut =$('#errorRut');
+                   const errorDigito = $('#errorDigito');
+                   const errorDireccion = $('#errorDireccion');
+                   const errorMarca = $('#errorMarca');
+                   const errorAño = $('#errorAño');
+
+                   const valorNombre = nombre.val();
+                   const valorApellido = apellido.val();
+                   const valorRut = rut.val();
+                   const valorDigito = digito.val();
+                   const valorDireccion = direccion.val();
+                   const valorMarca = marca.val();
+                   const valorAño = año.val();
+
+                   if (valorNombre == null || valorNombre == ''){
+                       evento.preventDefault();
+                       $('#errorNombre').text("Debe escribir su nombre");
+                       nombre.addClass("inputError");
+                   }else if(valorNombre.length > 30){
+                       evento.preventDefault();
+                       $('#errorNombre').text("Su nombre no debe tener más de 30 caractéres");
+                       nombre.addClass("inputError");
+                   }
+
+                   if (valorApellido == null || valorApellido == ''){
+                       evento.preventDefault();
+                       $('#errorApellido').text("Debe escribir su apellido");
+                       apellido.addClass("inputError");
+                   }else if(valorApellido.length > 30){
+                       evento.preventDefault();
+                       $('#errorApellido').text("Su apellido no debe tener más de 30 caractéres");
+                       apellido.addClass("inputError");
+                   }
+
+                   if (valorRut == null || valorRut == ''){
+                       evento.preventDefault();
+                       $('#errorRut').text("Debe escribir su rut");
+                       rut.addClass("inputError");
+                   }else if (valorRut.length < 7 || valorRut.length > 8){
+                       evento.preventDefault();
+                       $('#errorRut').text("Su rut debe tener un minimo de 7 y un máximo de 8 digitos");
+                       rut.addClass("inputError");
+
+                   }
+
+                   if (valorDigito == null || valorDigito == ''){
+                       evento.preventDefault();
+                       $('#errorDigito').text("Debe escribir el digito");
+                       digito.addClass("inputError");
+                   }else if (valorDigito.length > 2){
+                       evento.preventDefault();
+                       $('#errorDigito').text("Solo puede ser un dígito");
+                       digito.addClass("inputError");
+
+                   }
+
+                   if (valorDireccion == null || valorDireccion == ''){
+                       evento.preventDefault();
+                       $('#errorDireccion').text("Debe escribir su dirección");
+                       direccion.addClass("inputError");
+                   }else if (valorDireccion.length > 81){
+                       evento.preventDefault();
+                       $('#errorDireccion').text("Su dirección solo puede tener 80 caractéres");
+                       direccion.addClass("inputError");
+
+                   }
+
+                   if (valorMarca == null || valorMarca == ''){
+                       evento.preventDefault();
+                       $('#errorMarca').text("Debe escribir la marca de su vehiculo");
+                       marca.addClass("inputError");
+                   }else if (valorMarca.length > 21){
+                       evento.preventDefault();
+                       $('#errorMarca').text("La marca de su vehiculo no debe tener más de 20 caractéres");
+                       marca.addClass("inputError");
+
+                   }
+
+
+                   if (valorAño == null || valorAño == ''){
+                       evento.preventDefault();
+                       $('#errorAño').text("Debe escribir el año de su vehiculo");
+                       año.addClass("inputError");
+                   }else if (valorAño.length > 5){
+                       evento.preventDefault();
+                       $('#errorAño').text("No puede tener más de 4 dígitos");
+                       año.addClass("inputError");
+
+                   }
+
+                   
+                    
+                    
+
+
+
+                   if (valorNombre.length > 0 && valorNombre.length < 31 && valorApellido.length > 0 && valorApellido.length < 31   && valorRut.length > 6 && valorRut.length < 9  && valorDigito.length > 0 && valorDigito.length < 2 && valorDireccion.length > 0 && valorDireccion.length < 81 && valorMarca.length > 0 && valorMarca.length < 21 && valorAño.length > 0 && valorAño.length < 5){
+                       alert('Solicitud enviada correctamente, a nombre de '+valorNombre+' '+valorApellido+' rut '+valorRut+' por un valor de         ');
+                   }
+
+
+                   
+
+                   nombre.change(function(){
+                      errorNombre.text("");
+                      nombre.removeClass("inputError");
+                   });
+
+                   apellido.change(function(){
+                      errorApellido.text("");
+                      apellido.removeClass("inputError");
+                   });
+
+                   rut.change(function(){
+                      errorRut.text("");
+                      rut.removeClass("inputError");
+                   });
+
+                   digito.change(function(){
+                      errorDigito.text("");
+                      digito.removeClass("inputError");
+                   });
+
+                   direccion.change(function(){
+                      errorDireccion.text("");
+                      direccion.removeClass("inputError");
+                   });
+
+                   marca.change(function(){
+                      errorMarca.text("");
+                      marca.removeClass("inputError");
+                   });
+
+                   año.change(function(){
+                      errorAño.text("");
+                      año.removeClass("inputError");
+                   });
+
+
+
+                   function validarValores(nom, apell, rt, digi, dir, marc, añove){
+                       let isError = true;
+
+                       if(nom == null || nom ==''){
+                            nombre.addClass("inputError");
+                            errorNombre.text("Debe ingresar sus nombres");
+                        }else if (valorNombre.length > 30){
+                            nombre.addClass("inputError");
+                            errorNombre.text("Su nombre no debe tener más de 30 caractéres");
+                        }
+
+                        if(apell == null || apell ==''){
+                            apellido.addClass("inputError");
+                            errorApellido.text("Debe ingresar su apellido");
+                        }else if(valorApellido.length > 30){
+                            apellido.addClass("inputError");
+                            errorApellido.text("Su apellido no debe tener más de 30 caractéres");
+                        }
+
+                        if(rt == null || rt ==''){
+                            rut.addClass("inputError");
+                            errorRut.text("Debe ingresar sus nombres");
+                        }else if (valorRut.length < 7 || valorRut.length > 8){
+                            rut.addClass("inputError");
+                            errorRut.text("Su rut debe tener un minimo de 7 y un máximo de 8 digitos")
+                        }
+
+                        if(digi == null || digi ==''){
+                            digito.addClass("inputError");
+                            errorDigito.text("Debe ingresar  un digito");
+                        }else if (valorRut.length > 1){
+                            digito.addClass("inputError");
+                            errorDigito.text("Es solo un digito")
+                        }
+
+                        if(dir == null || dir ==''){
+                            direccion.addClass("inputError");
+                            errorDireccion.text("Debe ingresar su dirección");
+                        }else if (valorDireccion.length > 80){
+                            direccion.addClass("inputError");
+                            errorDireccion.text("Su deirección no debe tener más de 80 caractéres")
+                        }
+
+                        if(marc == null || marc ==''){
+                            marca.addClass("inputError");
+                            errorMarca.text("Debe ingresar la marca de su vehiculo");
+                        }else if (valorMarca.length > 20){
+                            marca.addClass("inputError");
+                            errorMarca.text("La marca de su vehiciulo no debe tener más de 20  caractéres")
+                        }
+
+                        if(añove == null || añove ==''){
+                            año.addClass("inputError");
+                            errorAño.text("Debe ingresar el año de su vehiculo");
+                        }else if (valorAño.length > 4){
+                            año.addClass("inputError");
+                            errorAño.text("El año de su vehiculo no debe tener más de 4 dígitos")
+                        }
+                           
+
+
+
+                        if(nombre.length > 0 && nombre.length < 31 && apellido.length > 0 && apellido.length < 31 && rut.length >6 && rut.length < 9 && digito.length > 0 && digito.length < 2 && direccion.length > 0 && direccion.length < 81 && marca.length > 0 && marca.length < 21 && año.length > 0 && año.length < 5){
+                            isError = false;
+                        }
+                        return isError;
+
+                    }
+                   
+
+
+
+                });
+           });
+       </script>
+       
+
+
+        
+    </div>
+   
+    
+</body>
+</html>
