@@ -216,26 +216,23 @@
                                     <label for="servicios" class="form-label">Servicios</label>
                                     
 
-                                    <div class="mb-3 row">
-                                        <label for="numero1" class="col-sm-4 col-form-label">Lavado exterior $ 7.000.</label>
-                                        <div class="col-sm-2">
-                                          <input type="number" class="form-control" id="numero1">
-                                        </div>
-                                        <div id="errorNumero1" class="mensajeError"></div>
-                                      </div>
-
-                                      <div class="mb-3 row">
-                                        <label for="numero2" class="col-sm-4 col-form-label">Lavado motor $ 5000.</label>
-                                        <div class="col-sm-2">
-                                          <input type="number" class="form-control" id="numero2">
-                                        </div>
-                                        <div id="errorNumero2" class="mensajeError"></div>
-                                      </div>
-                                      <div class="container casilla col-6">
-                                        <p><span id="resultado"></span></p>
+                                    <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" value="7000" id="servicios" name="servicios" checked>
+                                       <label class="form-check-label" for="lavadoExterior">
+                                          Lavado exterior $7000.
+                                       </label>
                                     </div>
-                                    <button  class="col-2" type="button" id="total">Total</button>
-
+                                    <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" value="5000" id="servicios" name="servicios" >
+                                       <label class="form-check-label" for="lavadoMotor">
+                                         Lavado de motor $5000.
+                                       </label>
+                                    </div>
+                                    <br>
+                                    <div class="mb-3">
+                                       <label for="fecha" class="form-label">Resevar fecha</label>
+                                       <input type="date" class="form-control" id="fecha" >
+                                    </div>
 
 
 
@@ -299,9 +296,7 @@
                    const direccion = $('#direccion');
                    const marca = $('#marca');
                    const año = $('#año');
-                   const numero1 = $('#numero1');
-                   const numero2 = $('#numero2');
-                  
+                   
 
                    const errorNombre = $('#errorNombre');
                    const errorApellido = $('#errorApellido');
@@ -310,8 +305,7 @@
                    const errorDireccion = $('#errorDireccion');
                    const errorMarca = $('#errorMarca');
                    const errorAño = $('#errorAño');
-                   const errorNumero1 = $('#errorNumero1');
-                   const errorNumero2 = $('#errorNumero2');
+                   
 
                    const valorNombre = nombre.val();
                    const valorApellido = apellido.val();
@@ -320,8 +314,7 @@
                    const valorDireccion = direccion.val();
                    const valorMarca = marca.val();
                    const valorAño = año.val();
-                   const valorNumero1 = numero1.val(); 
-                   const valorNumero2 = numero2.val();
+                   
 
                    if (valorNombre == null || valorNombre == ''){
                        evento.preventDefault();
@@ -417,7 +410,7 @@
 
 
                    if (valorNombre.length > 0 && valorNombre.length < 31 && valorApellido.length > 0 && valorApellido.length < 31   && valorRut.length > 6 && valorRut.length < 9  && valorDigito.length > 0 && valorDigito.length < 2 && valorDireccion.length > 0 && valorDireccion.length < 81 && valorMarca.length > 0 && valorMarca.length < 21 && valorAño.length > 0 && valorAño.length < 5 && valorNumero1 > 0 && valorNumero2 > 0){
-                    alert('Solicitud enviada correctamente, a nombre de '+valorNombre+' '+valorApellido+' rut '+valorRut+' - '+digito+' por un valor de  '+resultado+'       ');
+                    alert('Solicitud enviada correctamente, a nombre de '+valorNombre+' '+valorApellido+' rut '+valorRut+' - '+digito+' por un valor de        ');
                    }
 
 
@@ -550,21 +543,21 @@
 
                     }
 
-                    $("#total").click(function(){
-                        let valorNumero1 = parseInt(numero1.val());
-                        let valorNumero2 = parseInt(numero2.val());
-                        const iva = 0.19;
 
-                        if(validarValores(valorNumero1, valorNumero2)){
-                            let resultado = (valorNumero1*7000)+(valorNumero2*5000);
-                           aler("valor =",resultado);
+                    var check = $("input[name='servicios']");
+                    var suma = '';
 
-                        }
+                    if (check.is(':checked')){
+                        $("input[name='servicios']:checked").each(function(){
+                            
+                        });
+                         
 
+                    }
                         
+                   
 
-                        
-                    });
+                   
                       
 
 
